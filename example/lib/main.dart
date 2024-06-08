@@ -1,6 +1,6 @@
 import 'package:cell_calendar/cell_calendar.dart';
-import 'package:example/sample_event.dart';
 import 'package:flutter/material.dart';
+import 'sample_event.dart';
 
 void main() {
   runApp(MyApp());
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key? key, required this.title}) : super(key: key);
   final String title;
 
   @override
@@ -50,8 +50,8 @@ class MyHomePage extends StatelessWidget {
           );
         },
         monthYearLabelBuilder: (datetime) {
-          final year = datetime.year.toString();
-          final month = datetime.month.monthName;
+          final year = datetime?.year.toString();
+          final month = datetime?.month.monthName;
           return Padding(
             padding: const EdgeInsets.symmetric(vertical: 4),
             child: Row(
